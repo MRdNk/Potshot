@@ -28,15 +28,15 @@ $(function(){
             console.log("bang:"+ e.pageX +","+ e.pageY+','+highLow+'count:'+count);
             if (count>=6){
                 //console.dir( '{' + shots.join() + '}');
-                            $.ajax({
-                                type: "POST",
-                                //the url where you want to sent the userName and password to
-                                url: 'game/shoot',
-                                dataType: 'json',
-                                async: false,
-                                //json object to sent to the authentication url
-                                data: '{' + shots.join() + '}'
-                            })
+                $.ajax({
+                    type: "POST",
+                    //the url where you want to sent the userName and password to
+                    url: 'game/shoot',
+                    dataType: 'json',
+                    async: false,
+                    //json object to sent to the authentication url
+                    data: '{' + shots.join() + '}'
+                })
             }
         }
     })        
