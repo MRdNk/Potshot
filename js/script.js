@@ -1,11 +1,11 @@
 $(function(){    
-     animateDiv();
-    var animals = ['cow','sheep','swan','dolphin','horse'];
     var height = this.height;
     var width = this.width;
     var xPos;
     var yPos;
-    var midpoint = height/2;            
+    var midpoint = height/2; 
+    var shots = new Array();
+    var count =0;
     $(document).mousemove(function(e){
         yPos = e.clientY;
         xPos = e.clientX;
@@ -15,42 +15,32 @@ $(function(){
             'left': xPos -50            
         });
     }).mousedown(function(e){
-        if(e.which==1){ 
+        if(e.which==1){            
             //get height   
-            var highLow = ((height/2)<yPos)?"low":"high";        
-            console.log("bang:"+ e.pageX +","+ e.pageY+','+highLow);
-        }        
-    })
+            var highLow = ((height/2)<yPos)?"low":"high";     
+            shots[count]={
+                y:yPos,
+                x:xPos,
+                h:height,
+                hl:highLow
+            };
+            count++;
+            console.log("bang:"+ e.pageX +","+ e.pageY+','+highLow+'count:'+count);
+            if (count>=6){
+                //console.dir( '{' + shots.join() + '}');
+                            $.ajax({
+                                type: "POST",
+                                //the url where you want to sent the userName and password to
+                                url: 'game/shoot',
+                                dataType: 'json',
+                                async: false,
+                                //json object to sent to the authentication url
+                                data: '{' + shots.join() + '}'
+                            })
+            }
+        }
+    })        
+})
           
-})   
+ 
 
-function makeNewPosition(){
-    
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 50;
-    var w = $(window).width() - 50;    
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);    
-    return [nh,nw];    
-    
-}
-
-function animateDiv(){
-    var newq = makeNewPosition();
-    var oldq = $('.cow').offset();
-    var speed = calcSpeed([oldq.top, oldq.left], newq);
-    
-    $('.cow').animate({ top: newq[0], left: newq[1] }, speed, function(){
-      animateDiv();        
-    });
-    
-}
-
-function calcSpeed(prev, next) {    
-    var x = Math.abs(prev[1] - next[1]);
-    var y = Math.abs(prev[0] - next[0]);    
-    var greatest = x > y ? x : y;    
-    var speedModifier = 0.1;
-    var speed = Math.ceil(greatest/speedModifier);
-    return speed;
-}
