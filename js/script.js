@@ -35,7 +35,7 @@ $(function(){
                     dataType: 'json',
                     async: false,
                     //json object to sent to the authentication url
-                    data: '{' + shots.join() + '}'
+                    data: JSON.stringify('{' + shots.join() + '}')
                 })
             }
         }
