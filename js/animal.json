@@ -3,7 +3,8 @@
     "score": 2,
     "image": "horse.png",
     "sounds": {
-      "death": "horse_death.wav"
+      "death": "horse_death.wav",
+      "happy": "horse_happy.wav"
     },
   },  
   "duck": {
@@ -11,6 +12,13 @@
     "image": "duck.png",
     "sounds": {
       "death": "duck_death.wav"
+    }
+  },
+  "dog": {
+    "score":  1,
+    "image":  "dog.png",
+    "sounds": {
+      "luck": "dog_lucky.wav"
     }
   }
 }
