@@ -18,16 +18,20 @@ div.circle {
 }
 
 div.cow {
-width: 120px;
-height:80px;
-background-image: url('../assets/images/cow01.gif');
-background-repeat: none;
-position:fixed;
-    
+    width: 120px;
+    height:80px;
+    background-image: url('../assets/images/cow01.gif');
+    background-repeat: none;
+    position:fixed;
 }
 
 /* ------ WHAT DID YOU KILL PAGE ------- */
 /* ------------------------------------- */
+
+#animalswrap{
+    width: 80%;
+    margin-left: 10%;
+}
 
 .wdykh1{
     display: block;
@@ -42,6 +46,22 @@ position:fixed;
 }
 
 .formrow{
+    float: left;
+    width: 20%;
+}
+
+.formrow .imgwrap{
+    height: 100px;
+}
+
+.formrow input{
     clear: left;
 }
->>>>>>> Created What Did You Kill page in it's most basic form
+
+input[type="submit"]{
+    width: 80%;
+    clear: left;
+    line-height: 3em;
+    height: 3em;
+    margin-left: 10%;
+}
