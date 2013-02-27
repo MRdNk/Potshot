@@ -27,7 +27,7 @@ $(function(){
             count++;
             console.log("bang:"+ e.pageX +","+ e.pageY+','+highLow+'count:'+count);
             if (count>=6){
-                //console.dir( '{' + shots.join() + '}');
+                console.dir( JSON.stringify(shots));
                 $.ajax({
                     type: "POST",
                     //the url where you want to sent the userName and password to
@@ -35,7 +35,7 @@ $(function(){
                     dataType: 'json',
                     async: false,
                     //json object to sent to the authentication url
-                    data: JSON.stringify('{' + shots.join() + '}')
+                    data: JSON.stringify(shots)
                 })
             }
         }
