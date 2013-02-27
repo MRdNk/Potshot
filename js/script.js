@@ -1,11 +1,3 @@
-function Animal (elem, opts) {
-
-}
-
-Animal.prototype.move = function () {
-
-}
-
 $(function(){    
     var height = this.height;
     var width = this.width;
