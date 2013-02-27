@@ -2,6 +2,7 @@
   "horse": {
     "score": 2,
     "image": "horse.png",
+    "icon": "horseIcon.png",
     "sounds": {
       "death": "horse_death.wav",
       "happy": "horse_happy.wav"

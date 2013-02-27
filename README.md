@@ -10,6 +10,9 @@ Animals Hash
 js/animal.json
 ```
 
+People Hash
+-----------
+
 ```javascript
 js/people.json
 ```
