@@ -17,15 +17,6 @@ div.circle {
     height:300px;
 }
 
-div.cow {
-width: 120px;
-height:80px;
-background-image: url('../assets/images/cow01.gif');
-background-repeat: none;
-position:fixed;
-    
-}
-
 /* ------ WHAT DID YOU KILL PAGE ------- */
 /* ------------------------------------- */
 
