@@ -1,6 +1,21 @@
+function Animal (elem, opts) {
+
+}
+
+Animal.prototype.move = function () {
+
+}
+
 $(function(){    
-     animateDiv();
+    animateDiv();
     var animals = ['cow','sheep','swan','dolphin','horse'];
+
+    for(var index in animals) {
+      if(animals.hasOwnProperty(index)) {
+        new Animal()
+      }
+    }
+
     var height = this.height;
     var width = this.width;
     var xPos;
@@ -35,15 +50,14 @@ function makeNewPosition(){
     
 }
 
-function animateDiv(){
+function animateDiv(name){
     var newq = makeNewPosition();
-    var oldq = $('.cow').offset();
+    var oldq = $('.' + name).offset();
     var speed = calcSpeed([oldq.top, oldq.left], newq);
     
-    $('.cow').animate({ top: newq[0], left: newq[1] }, speed, function(){
+    $('.' + name).animate({ top: newq[0], left: newq[1] }, speed, function(){
       animateDiv();        
-    });
-    
+    });   
 }
 
 function calcSpeed(prev, next) {    
@@ -54,3 +68,5 @@ function calcSpeed(prev, next) {
     var speed = Math.ceil(greatest/speedModifier);
     return speed;
 }
+
+
