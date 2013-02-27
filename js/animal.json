@@ -1,16 +1,16 @@
 {
-	"horse": {
-		"score": 2,
-		"image": "horse.png",
-		"sounds": {
-			"death": "horse_death.wav"
-		},
-	},	
-	"duck": {
-		"score": 0,
-		"image": "duck.png",
-		"sounds": {
-			"death": "duck_death.wav"
-		}
-	}
+  "horse": {
+    "score": 2,
+    "image": "horse.png",
+    "sounds": {
+      "death": "horse_death.wav"
+    },
+  },  
+  "duck": {
+    "score": 0,
+    "image": "duck.png",
+    "sounds": {
+      "death": "duck_death.wav"
+    }
+  }
 }
