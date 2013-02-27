@@ -10,13 +10,9 @@ $(function(){
         });
     }).mousedown(function(e){
         if(e.which==1){ 
-            //get height
-           
+            //get height           
             console.log("bang:"+ e.pageX +","+ e.pageY+','+height);
-        }
-        
+        }        
     })
-    
-    function hit
-        
+          
 })    
