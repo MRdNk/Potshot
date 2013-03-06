@@ -1,4 +1,5 @@
-$(function(){    
+$(function(){     
+    
     var height = this.height;
     var width = this.width;
     var xPos;
@@ -41,6 +42,23 @@ $(function(){
         }
     })        
 })
+
+
+    soundManager.setup({
+        url: '/potshot/js/soundmanager2/swf/', 
+        flashVersion: 9,
+        onready: function() {
+         console.log('SM2 ready!');
+        },
+        ontimeout: function() {
+         console.log('SM2 init failed!');
+        },
+        defaultOptions: {
+            // set global default volume for all sound objects
+            volume: 33
+        }
+    });
+
           
  
 

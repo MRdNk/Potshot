@@ -120,20 +120,7 @@ soundManager.setup({
   url: '../../swf/', // path to SoundManager2 SWF files (note trailing slash)
   debugMode: true,
   consoleOnly: false
-});
-
-soundManager.onready(function(oStatus) {
-  if (!oStatus.success) {
-    return false;	
-  }
-  // soundManager is initialised, ready to use. Create a sound for this demo page.
-
-  if (soundManager.flashVersion > 8) {
-    t = window.setInterval(checkRAM,500);
-    document.getElementById('flash-ram-use').style.display = 'inline';
-    checkRAM();
-  }
-
+  onready: function(){
   soundManager.createSound({
     id: 'aDrumSound',
     url: '../mpc/audio/AMB_SN13.mp3'
@@ -157,8 +144,9 @@ soundManager.onready(function(oStatus) {
     autoLoad: true,
     volume:50
   });
-
+  }
 });
+
 
 function checkRAM() {
   if (soundManager.supported()) {
