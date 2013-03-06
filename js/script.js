@@ -1,5 +1,27 @@
-$(function(){     
-    
+soundManager.setup({
+    url: '/potshot/js/soundmanager2/swf/', 
+    flashVersion: 9,
+    onready: function() {
+        console.log('SM2 ready!');
+        soundManager.createSound({
+            id:'mySound1',
+            url:'/potshot/assets/audio/Bang3.wav'
+        });
+    },
+    ontimeout: function() {
+        console.log('SM2 init failed!');
+    },
+    defaultOptions: {
+        // set global default volume for all sound objects
+        volume: 33
+    }
+});
+
+
+
+
+$(function(){    
+
     var height = this.height;
     var width = this.width;
     var xPos;
@@ -26,6 +48,7 @@ $(function(){
                 hl:highLow
             };
             count++;
+            soundManager.play('mySound1');
             console.log("bang:"+ e.pageX +","+ e.pageY+','+highLow+'count:'+count);
             if (count>=6){
                 console.dir( JSON.stringify(shots));
@@ -44,20 +67,8 @@ $(function(){
 })
 
 
-    soundManager.setup({
-        url: '/potshot/js/soundmanager2/swf/', 
-        flashVersion: 9,
-        onready: function() {
-         console.log('SM2 ready!');
-        },
-        ontimeout: function() {
-         console.log('SM2 init failed!');
-        },
-        defaultOptions: {
-            // set global default volume for all sound objects
-            volume: 33
-        }
-    });
+
+
 
           
  
