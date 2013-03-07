@@ -114,7 +114,7 @@ var soundy = (function (opts) {
 
 }())
 
-/*soundy.done( function (err, done) {
+soundy.done( function (err, done) {
 	console.log(err, done)
 	soundy.play(soundy.sounds.german)
-})*/
+})
