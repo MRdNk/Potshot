@@ -1,4 +1,5 @@
 $(function(){    
+
     var height = this.height;
     var width = this.width;
     var xPos;
@@ -41,6 +42,4 @@ $(function(){
         }
     })        
 })
-          
- 
 

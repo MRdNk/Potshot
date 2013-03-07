@@ -32,6 +32,8 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.post('/game/shoot', game.shoot);
+app.get('/killed', routes.whatkill);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
