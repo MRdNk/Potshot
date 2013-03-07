@@ -46,47 +46,47 @@ var soundy = (function (opts) {
 
 	function loadLibrary (cb) {
 		var sounds = [
-			{
-					file: 'German-Reject1.wav'
-				,	name: 'german'
-			}
-			,	{
-					file: 'Moo-Panicked.wav'
-				,	name: 'moo'
-			}
-			,	{
-					file: 'Baa1.wav'
-				,	name: 'baa'
-			}
-			, {
-					file: 'Dog1.wav'
-				,	name: 'dog'
-			}
-			,	{
-					file: 'Dog2.wav'
-				,	name: 'dog2'
-			}
-			,	{
-					file: 'Dolphin1.wav'
-				, name: 'dolphin'
-			}
-			,	{
-					file: 'Horse1.wav'
-				,	name: 'horse'
-			}
-			,	{
-					file: 'Pig1.wav'
-				, name: 'pig'
-			}
-			, {
-					file: 'Quack-Donald.wav'
-				, name: 'duck'
-			}
-			,	{
-					file: 'Swan1.wav'
-				, name: 'swan'
-			}
-		];
+      {
+          file: 'German-Reject1.wav'
+        , name: 'german'
+      }
+      , {
+          file: 'Moo-Panicked.wav'
+        , name: 'moo'
+      }
+      , {
+          file: 'Baa1.wav'
+        , name: 'baa'
+      }
+      , {
+          file: 'Dog1.wav'
+        , name: 'dog'
+      }
+      , {
+          file: 'Dog2.wav'
+        , name: 'dog2'
+      }
+      , {
+          file: 'Dolphin1.wav'
+        , name: 'dolphin'
+      }
+      , {
+          file: 'Horse1.wav'
+        , name: 'horse'
+      }
+      , {
+          file: 'Pig1.wav'
+        , name: 'pig'
+      }
+      , {
+          file: 'Quack-Donald.wav'
+        , name: 'duck'
+      }
+      , {
+          file: 'Swan1.wav'
+        , name: 'swan'
+      }
+    ];
 
 		var loadedCount = 0
 
@@ -113,3 +113,8 @@ var soundy = (function (opts) {
 	return that
 
 }())
+
+/*soundy.done( function (err, done) {
+	console.log(err, done)
+	soundy.play(soundy.sounds.german)
+})*/
