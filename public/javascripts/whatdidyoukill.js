@@ -23,4 +23,19 @@ $(document).ready(function() {
 
 	// Attach event for onclick of animat { Play noise, increase total }
 
+	soundy.done (function (err, done) {
+		if (err)
+			console.error(err)
+		else 
+			$('.anianimal.sheep').click (function () {soundy.play(soundy.sounds.baa)})
+			$('.anianimal.dog').click (function () { soundy.play (soundy.sounds.dog2)})
+			$('.anianimal.cow').click ( function () { soundy.play (soundy.sounds.moo)})
+			$('.anianimal.swan').click ( function () { soundy.play (soundy.sounds.swan)})
+			$('.anianimal.duck').click ( function () { soundy.play (soundy.sounds.duck)})
+			$('.anianimal.horse').click ( function () { soundy.play (soundy.sounds.horse)})
+			$('.anianimal.pig').click ( function () { soundy.play (soundy.sounds.pig)})
+			$('.anianimal.dolphin').click ( function () { soundy.play (soundy.sounds.dolphin)})
+	});
+
+
 })
