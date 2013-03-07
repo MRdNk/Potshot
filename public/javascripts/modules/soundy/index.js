@@ -6,12 +6,14 @@ var soundy = (function (opts) {
 
 	var context
 
-	function init () {
+	function init (cb) {
 		try {
 			context = new webkitAudioContext() || new mozAudioContext() || new AudioContext()
+			cb(null, 1)
 		}
 		catch (e) {
 			alert('Web Audio API is not supported in your browser')
+			cb(e)
 		}
 	}
 
@@ -45,61 +47,68 @@ var soundy = (function (opts) {
 	}
 
 	function loadLibrary (cb) {
-		var sounds = [
-      {
-          file: 'German-Reject1.wav'
-        , name: 'german'
-      }
-      , {
-          file: 'Moo-Panicked.wav'
-        , name: 'moo'
-      }
-      , {
-          file: 'Baa1.wav'
-        , name: 'baa'
-      }
-      , {
-          file: 'Dog1.wav'
-        , name: 'dog'
-      }
-      , {
-          file: 'Dog2.wav'
-        , name: 'dog2'
-      }
-      , {
-          file: 'Dolphin1.wav'
-        , name: 'dolphin'
-      }
-      , {
-          file: 'Horse1.wav'
-        , name: 'horse'
-      }
-      , {
-          file: 'Pig1.wav'
-        , name: 'pig'
-      }
-      , {
-          file: 'Quack-Donald.wav'
-        , name: 'duck'
-      }
-      , {
-          file: 'Swan1.wav'
-        , name: 'swan'
-      }
-    ];
+		init(function (err, ready) {
 
-		var loadedCount = 0
+			if (err) {console.error(err)}
+			if (ready) {
+			
+				var sounds = [
+		      {
+		          file: 'German-Reject1.wav'
+		        , name: 'german'
+		      }
+		      , {
+		          file: 'Moo-Panicked.wav'
+		        , name: 'moo'
+		      }
+		      , {
+		          file: 'Baa1.wav'
+		        , name: 'baa'
+		      }
+		      , {
+		          file: 'Dog1.wav'
+		        , name: 'dog'
+		      }
+		      , {
+		          file: 'Dog2.wav'
+		        , name: 'dog2'
+		      }
+		      , {
+		          file: 'Dolphin1.wav'
+		        , name: 'dolphin'
+		      }
+		      , {
+		          file: 'Horse1.wav'
+		        , name: 'horse'
+		      }
+		      , {
+		          file: 'Pig1.wav'
+		        , name: 'pig'
+		      }
+		      , {
+		          file: 'Quack-Donald.wav'
+		        , name: 'duck'
+		      }
+		      , {
+		          file: 'Swan1.wav'
+		        , name: 'swan'
+		      }
+		    ];
 
-		for(var i=0; i<sounds.length; i++) {
-			loadSound('/audio/' + sounds[i].file, sounds[i].name, function (err, done) {
-				loadedCount ++
-				if (sounds.length === loadedCount) 
-					cb(null, 'loaded')
-			});
-		}
+				var loadedCount = 0
+
+				for(var i=0; i<sounds.length; i++) {
+					loadSound('/audio/' + sounds[i].file, sounds[i].name, function (err, done) {
+						loadedCount ++
+						if (sounds.length === loadedCount) 
+							cb(null, 'loaded')
+					});
+				}
+			}
+		})
 	}
 
-	window.addEventListener('load', init, false)
+	// window.addEventListener('load', init, false)
 
 	function add (file, name) {
 		console.log(file, name);	
@@ -116,5 +125,5 @@ var soundy = (function (opts) {
 
 soundy.done( function (err, done) {
 	console.log(err, done)
-	soundy.play(soundy.sounds.german)
+	// soundy.play(soundy.sounds.german)
 })
